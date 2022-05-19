@@ -22,7 +22,7 @@
 class UnionFind(obj):
     def __init__(self, n):
         #集合
-        self.id = []
+        self.id = [None] * count
         #数据个数
         self.count = n
         #初始化
@@ -35,7 +35,7 @@ class UnionFind(obj):
 class UnionFind(obj):
     def __init__(self, n):
         #集合
-        self.id = []
+        self.id = [None] * count
         #数据个数
         self.count = n
         #初始化
@@ -111,11 +111,11 @@ isConnected(p,q) - 查看 p 和 q 两个元素是否相连接在一起。
 class FastUnionFind(object, count):
     def __init__(self):
         #使用一个数组构建一个指向父节点的树
-        self.parent = []
+        self.parent = [None] * count
         #sz 数组，sz[i] 表示以 i 为根的集合中元素个数
-        self.sz = []
+        self.sz = [None] * count
         #添加 rank 数组，rank[i] 表示以 i 为根的集合所表示的树的层数
-        self.rank = []
+        self.rank = [None] * count
         #数据个数
         self.count = count
         #初始化，每一个parent[i]指向自己，表示每个元素自己自成一个集合
