@@ -62,7 +62,7 @@ class DenseGraph(object):
         return self.edge
     
     def addEdge(self, v, w):
-        """向图中添加一个便"""
+        """向图中添加一个边"""
         assert v >= 0 and v < self.vertex
         assert w >= 0 and w < self.vertex
         #如果已经存在边了，直接返回
