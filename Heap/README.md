@@ -104,19 +104,19 @@ def shiftUp(self, k):
 
 ```python
 def shiftDown(self, k):
-        """
-        shiftDown操作
-        """
-        while 2 * k <= self.count - 1:
-            j = 2 * k
-            if j + 1 <= self.count - 1 and self.data[j + 1] > self.data[j]:
-                j += 1
+    """
+    shiftDown操作
+    """
+    while 2 * k <= self.count - 1:
+        j = 2 * k
+        if j + 1 <= self.count - 1 and self.data[j + 1] > self.data[j]:
+            j += 1
             
-            if self.data[k] > self.data[j]:
-                break
-            else:
-                self.data[k], self.data[j] = self.data[j], self.data[k]
-                k = j
+        if self.data[k] > self.data[j]:
+            break
+        else:
+            self.data[k], self.data[j] = self.data[j], self.data[k]
+            k = j
 ```
 ### 六、基础堆排序
 堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。
@@ -151,29 +151,30 @@ def shiftDown(self, k):
     <img src="https://www.runoob.com/wp-content/uploads/2020/09/heapify-06.png" width="70%"/>
 </p>
 ```python
-    def Heapify(self, arr):
-        """
-        通过一个给定数组创建一个最大堆
-        该构造堆的过程, 时间复杂度为O(n)
-        """
-        l = len(arr)
-        self.data = []
-        for i in arr:
-            self.data.append(i)
-        self.count = len(self.data)
 
-        #从第一个不是叶子节点的元素开始
-        i = l / 2
+def Heapify(self, arr):
+    """
+    通过一个给定数组创建一个最大堆
+    该构造堆的过程, 时间复杂度为O(n)
+    """
+    l = len(arr)
+    self.data = []
+    for i in arr:
+        self.data.append(i)
+    self.count = len(self.data)
+
+    #从第一个不是叶子节点的元素开始
+    i = l / 2
         
-        #1.构建大顶堆
-        while i >= 0:
-            self.data = self.adjustHeap(self.data, i, self.count)
-            i -= 1
+    #1.构建大顶堆
+    while i >= 0:
+        self.data = self.adjustHeap(self.data, i, self.count)
+        i -= 1
         
-        #2.调整堆结构 + 交换堆顶元素与末尾元素
-        j = self.count - 1
-        while j > 0:
-            self.data[0], self.data[j] = self.data[j], self.data[0]
-            self.data = self.adjustHeap(self.data, 0, j)
-            j -= 1
+    #2.调整堆结构 + 交换堆顶元素与末尾元素
+    j = self.count - 1
+    while j > 0:
+        self.data[0], self.data[j] = self.data[j], self.data[0]
+        self.data = self.adjustHeap(self.data, 0, j)
+        j -= 1
 ```
